@@ -52,7 +52,7 @@ SerialLineReader(Serial, isr)</br>
 SerialLineReader(Serial, bufsize)</br>
 SerialLineReader(Serial, bufsize, isr)</br>
 
-Default bufsize is 100. ISR is void function with one argument of type char*. It's called when line is ready to be read.
+HardwareSerial is passed by reference. Default bufsize is 100. ISR is void function with one argument of type char*. It's called when line is ready to be read.
 
 ### Including library
 1. Download zip
