@@ -5,7 +5,7 @@ Arduino library for buffered serial line reading
 Should work on most of the boards, tested on UNO and ESP32DevKitV1
 
 ## Usage
-### Example event based use of SerialLineReader. 
+### Example event based use of SerialLineReader
 ```
 #include <serial-readline.h>
 
@@ -25,7 +25,7 @@ void loop() {
 }
 ```
 
-### Example polling based use of SerialLineReader.
+### Example polling based use of SerialLineReader
 ```
 #include <serial-readline.h>
 
