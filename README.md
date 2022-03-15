@@ -47,10 +47,10 @@ void loop() {
 
 ### Constructors
 
-SerialLineReader(Serial)
-SerialLineReader(Serial, isr)
-SerialLineReader(Serial, bufsize)
-SerialLineReader(Serial, bufsize, isr)
+SerialLineReader(Serial)</br>
+SerialLineReader(Serial, isr)</br>
+SerialLineReader(Serial, bufsize)</br>
+SerialLineReader(Serial, bufsize, isr)</br>
 
 Default bufsize is 100. ISR is void function with one argument of type char*. It's called when line is ready to be read.
 
