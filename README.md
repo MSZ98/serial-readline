@@ -29,7 +29,7 @@ void loop() {
 ```
 #include <serial-readline.h>
 
-SerialLineReader reader(Serial, received);
+SerialLineReader reader(Serial);
 
 void setup() {
 	Serial.begin(115200);
