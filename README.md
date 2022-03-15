@@ -55,7 +55,7 @@ SerialLineReader(Serial, bufsize, isr)</br>
 HardwareSerial is passed by reference. Default bufsize is 100. ISR is void function with one argument of type char*. It's called when line is ready to be read.
 
 ### Including library
-1. Download zip
+1. Download <href src="https://github.com/MSZ98/serial-readline/blob/main/serial-readline.zip">zip</href>
 2. In Arduino IDE
    Sketch -> Include library -> Add .ZIP Library...
 3. #include <serial-readline.h>
