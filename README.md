@@ -56,7 +56,7 @@ HardwareSerial is passed by reference. Default bufsize is 100. ISR is void funct
 
 ### Including library
 
-1. Download ![zip](https://github.com/MSZ98/serial-readline/blob/95538a0b9ac9e2a18c2f36c7f19b366f431de77b/serial-readline.zip)
+1. Download ![zip](https://github.com/MSZ98/serial-readline/blob/bcbb6a785e4b71e5f63080dc7666eee8577d573f/serial-readline.zip)
 2. In Arduino IDE ... Sketch -> Include library -> Add .ZIP Library...
 3. #include <serial-readline.h>
 
