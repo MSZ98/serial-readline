@@ -1,22 +1,8 @@
 /*
-    pcf8574.cpp
-    Version 0.0.1
-    Created 3.03.2022
-    Author: MSZ98 (github.com/MSZ98)
-    Copyright (C) 2022 MSZ98
-    This file is part of the Arduino serial-readline.h library.
-    The serial-readline.h library is free software; you can redistribute it and/or
-    modify it under the terms of the GNU Lesser General Public
-    License as published by the Free Software Foundation; either
-    version 2.1 of the License, or (at your option) any later version.
-    
-    The Library is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
-    See the GNU Lesser General Public License for more details.
-    
-    You should have received a copy of the GNU Lesser General Public
-    License along with the GNU C Library; if not, see <http://www.gnu.org/licenses/>.
+ * serial-readline.h - Library for buffered serial line reading
+ * Created by MSZ, March 3, 2022.
+ * Released into the public domain under MIT Licence.
+ * Copyright (c) 2022 Zawisza (MSZ98)
 */
 
 #ifndef SERIAL_READLINE_H
