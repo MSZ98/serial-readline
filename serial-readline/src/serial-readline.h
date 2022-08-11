@@ -1,19 +1,33 @@
-/**
- * serial-readline.h - Library for buffered serial line reading
- * Created by MSZ, March 3, 2022.
- * Released into the public domain.
+/*
+    pcf8574.cpp
+    Version 0.0.1
+    Created 3.03.2022
+    Author: MSZ98 (github.com/MSZ98)
+    Copyright (C) 2022 MSZ98
+    This file is part of the Arduino serial-readline.h library.
+    The serial-readline.h library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+    
+    The Library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+    See the GNU Lesser General Public License for more details.
+    
+    You should have received a copy of the GNU Lesser General Public
+    License along with the GNU C Library; if not, see <http://www.gnu.org/licenses/>.
 */
+
 #ifndef SERIAL_READLINE_H
 #define SERIAL_READLINE_H
-
 
 #include <Arduino.h>
 #include <string.h>
 
-
 class LineQueue {
 
-	private:
+private:
 	typedef struct {
 		char *line;
 		void *next;
@@ -22,7 +36,7 @@ class LineQueue {
 	Line *first = NULL, *last = NULL;
 	int _size = 0;
 	
-	public:
+public:
 	void add(char* line) {
 		Line *l = new Line;
 		l->line = line;
@@ -32,6 +46,7 @@ class LineQueue {
 		if(first == NULL) first = last;
 		_size++;
 	}
+	
 	char* get() {
 		Line *l = first;
 		first = (Line*) l->next;
@@ -54,7 +69,7 @@ class LineQueue {
 
 class SerialLineReader {
 
-	private:
+private:
 	LineQueue queue;
 	HardwareSerial *hs;
 	void (*isr)(char*) = NULL;
@@ -63,7 +78,7 @@ class SerialLineReader {
 	int buffer_limit;
 	char *buffer;
 
-	public:
+public:
 	SerialLineReader(HardwareSerial &hs, int bufsize, void (*isr)(char*)) {
 		initialize(hs, bufsize, isr);
 	}
@@ -81,19 +96,18 @@ class SerialLineReader {
 	}
 
 	int available() {return queue.size();}
-	int len() {queue.firstLineLength();}
+	int len() {return queue.firstLineLength();}
 	
 	void poll();
 	void read(char*);
 
-	private:
+private:
 	void initialize(HardwareSerial &hs, int bufsize, void (*isr)(char*)) {
 		this->hs = &hs;
 		this->isr = isr;
 		buffer = new char[bufsize];
 		buffer_limit = bufsize;
 	}
-	
 };
 
 
